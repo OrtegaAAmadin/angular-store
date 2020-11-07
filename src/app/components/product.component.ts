@@ -13,6 +13,8 @@ export class ProductComponent implements OnInit, DoCheck, OnDestroy{
   // envia dato al componente padre
   @Output() productClicked: EventEmitter<any> = new EventEmitter();
 
+  today = new Date();
+
   constructor(){
     console.log('1.-constructor');
   }
