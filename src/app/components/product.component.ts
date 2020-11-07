@@ -1,20 +1,42 @@
 import { Product } from './../product.model';
-import { Component, Input, Output, EventEmitter } from '@angular/core';
+import { Component, Input, Output, EventEmitter, OnChanges, SimpleChanges, OnInit, DoCheck, OnDestroy } from '@angular/core';
 
 @Component({
   selector: 'app-product',
-  templateUrl: './product.component.html'
+  templateUrl: './product.component.html',
+  styleUrls: ['./product.component.css']
 })
-export class ProductComponent{
+export class ProductComponent implements OnInit, DoCheck, OnDestroy{
 
-  //recibe dato de otro componente
+  // recibe dato de otro componente
   @Input() product: Product;
-  //envia dato al componente padre
+  // envia dato al componente padre
   @Output() productClicked: EventEmitter<any> = new EventEmitter();
 
-  addCart(): void{
+  constructor(){
+    console.log('1.-constructor');
+  }
+/*
+  ngOnChanges(change: SimpleChanges): void{
+    console.log('2.-ngOnChanges');
+    console.log(change);
+  }*/
+
+  ngOnInit(): void {
+    console.log('3.-ngOnInit');
+  }
+
+  ngDoCheck(): void {
+    console.log('4.-ngDoCheck');
+  }
+
+  ngOnDestroy(): void {
+    console.log('5.-ngOnDestroy');
+  }
+
+  addCart(id: string): void{
     console.log('añadir al carrito');
-    this.productClicked.emit(this.product.id);
+    this.productClicked.emit(id);
   }
 
 }
