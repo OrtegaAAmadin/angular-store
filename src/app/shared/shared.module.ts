@@ -1,3 +1,6 @@
+import { ReactiveFormsModule } from '@angular/forms';
+import { CartComponent } from './components/cart/cart.component';
+import { MaterialModule } from './../material/material.module';
 import { RouterModule } from '@angular/router';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
@@ -11,17 +14,21 @@ import { HighlightDirective } from './directives/highlight/highlight.directive';
     FooterComponent,
     HeaderComponent,
     ExponentialPipe,
-    HighlightDirective
+    HighlightDirective,
+    CartComponent
   ],
   exports: [
     FooterComponent,
     HeaderComponent,
     ExponentialPipe,
-    HighlightDirective
+    HighlightDirective,
+    CartComponent
   ],
   imports: [
     CommonModule,
-    RouterModule
+    RouterModule,
+    MaterialModule,
+    ReactiveFormsModule
   ]
 })
 export class SharedModule { }

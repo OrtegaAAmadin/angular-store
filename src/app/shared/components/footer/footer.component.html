@@ -1,1 +1,36 @@
-<p>footer works!</p>
+<mat-toolbar color="primary" style="height: auto;">
+<footer>
+  <div class="container between-xs middle-xs">
+    <div class="row">
+      <div class="col-xs-12 col-md-4">
+        <div class="box">
+          <h3>Productos</h3>
+          <ul>
+            <li><a routerLink="/products" [queryParams]="{ type: 'news'}">Nuevos Productos</a></li>
+            <li><a routerLink="/products" [queryParams]="{ type: 'offer'}">En oferta</a></li>
+            <li><a routerLink="/products" [queryParams]="{ type: 'latest'}">Últimos productos</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="col-xs-12 col-md-4">
+        <div class="box">
+          <h3>Acerca de PlatziStore</h3>
+          <ul>
+            <li><a routerLink="/about-us">Sobre nosotros</a></li>
+            <li><a routerLink="/stores">Nuestras tiendas</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="col-xs-12 col-md-4">
+        <div class="box">
+          <h3>Contacto</h3>
+          <mat-form-field class="example-full-width">
+            <input matInput placeholder="Ingrese su correo" [formControl]="emailField" type="email">
+          </mat-form-field>
+          <button mat-raised-button [disabled]="emailField.invalid" (click)="sendEmail()">Enviar</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+</mat-toolbar>

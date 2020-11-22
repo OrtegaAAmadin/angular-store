@@ -1,4 +1,4 @@
-import { Product } from './../product.model';
+import { Product } from '../../../product.model';
 import { Component, Input, Output, EventEmitter, OnChanges, SimpleChanges, OnInit, DoCheck, OnDestroy } from '@angular/core';
 
 @Component({
@@ -6,7 +6,7 @@ import { Component, Input, Output, EventEmitter, OnChanges, SimpleChanges, OnIni
   templateUrl: './product.component.html',
   styleUrls: ['./product.component.css']
 })
-export class ProductComponent implements OnInit, DoCheck, OnDestroy{
+export class ProductComponent implements OnInit{
 
   // recibe dato de otro componente
   @Input() product: Product;
@@ -25,9 +25,9 @@ export class ProductComponent implements OnInit, DoCheck, OnDestroy{
   }*/
 
   ngOnInit(): void {
-    console.log('3.-ngOnInit');
+    //console.log('3.-ngOnInit');
   }
-
+/*
   ngDoCheck(): void {
     console.log('4.-ngDoCheck');
   }
@@ -35,7 +35,7 @@ export class ProductComponent implements OnInit, DoCheck, OnDestroy{
   ngOnDestroy(): void {
     console.log('5.-ngOnDestroy');
   }
-
+*/
   addCart(id: string): void{
     console.log('añadir al carrito');
     this.productClicked.emit(id);
